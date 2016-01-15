@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="userApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Repo Shift Walkthrough</title>
+    <link href="vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../views/styles.css">
+    <script src="vendors/angular/angular.min.js"></script>
+    <script src="assets/scripts/client.min.js"></script>
+</head>
+<body>
+    <div class="handlesDiv" ng-controller="MainController">
+        <h1>Repo Shift Walkthrough</h1>
+        <p class="pageBy">Typed by Jeremy Cloutier || Coding Walkthrough by Joel Miller</p>
+        <!--Right is our scoped list variable, left is the variable we use on each individual item, ex.)"anyName in list"-->
+        <!--The well is from bootstrap, gives us rounded corners, and styling -->
+      <div class ='well col-md-3' ng-repeat="user in users">
+          <p>Name: {{user.name}}</p>
+          <p>Age: {{user.age}}</p>
+          <p>Sex: {{user.sex}}</p>
+          <p>Handle: {{user.twitter}}</p>
+          <p>Location: {{user.location}}</p>
+          <button class="btn btn-danger" ng-click="removeUser(user)">Delete</button>
+      </div>
+    </div>
+</body>
+</html>
